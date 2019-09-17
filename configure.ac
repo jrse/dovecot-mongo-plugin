@@ -8,7 +8,7 @@
 
 AC_PREREQ([2.59])
 
-AC_INIT([dovecot-ceph-plugin], [0.0.21], [https://github.com/ceph-dovecot/dovecot-ceph-plugin/issues/new], ,[https://github.com/ceph-dovecot/dovecot-ceph-plugin])
+AC_INIT([dovecot-mongo-plugin], [0.0.21], [https://github.com/jrse/dovecot-mongo-plugin/issues/new], ,[https://github.com/jrse/dovecot-mongo-plugin])
 AC_CONFIG_AUX_DIR([.])
 AC_CONFIG_SRCDIR([src])
 AC_CONFIG_MACRO_DIR([m4])
@@ -53,12 +53,6 @@ AC_CHECK_FUNC(rados_read_op_omap_get_vals2, AC_DEFINE(HAVE_OMAP_GET_VALS2, 1, [D
 AC_CHECK_FUNC(rados_set_alloc_hint2, AC_DEFINE(HAVE_ALLOC_HINT_2, 1, [Define if you have the `set_alloc_hint2' function]))
 AC_CHECK_FUNC(rados_read_op_omap_get_keys2, AC_DEFINE(HAVE_OMAP_GET_KEYS_2, 1, [Define if you have the `omap_get_keys2' function]))
 
-# Evaluate with options
-AC_ARG_WITH(dict,
-AS_HELP_STRING([--with-dict[=ARG]], [Build with [ARG=yes] or without [ARG=no] RADOS dictionary plugin (yes)]),
-  TEST_WITH(dict, $withval),
-  want_dict=yes)
-AM_CONDITIONAL(BUILD_DICT_RADOS, test "$want_dict" = "yes")
 
 AC_ARG_WITH(storage,
 AS_HELP_STRING([--with-storage[=ARG]], [Build with [ARG=yes] or without [ARG=no] RADOS storage plugin (yes)]),
@@ -212,7 +206,6 @@ AC_CONFIG_FILES([
 Makefile
 src/Makefile
 src/librmb/Makefile
-src/dict-rados/Makefile
 src/storage-rbox/Makefile
 src/librmb/tools/Makefile
 src/librmb/tools/rmb/Makefile
@@ -225,7 +218,6 @@ echo
 AC_MSG_NOTICE([DEBUG is enabled .............. : $enable_debug])
 AC_MSG_NOTICE([Install prefix ................ : $prefix])
 AC_MSG_NOTICE([Dovecot directory ............. : $dovecotdir])
-AC_MSG_NOTICE([With dictionary ............... : $want_dict])
 AC_MSG_NOTICE([With storage .................. : $want_storage])
 AC_MSG_NOTICE([With tests .................... : $want_tests])
 AC_MSG_NOTICE([With integration tests ........ : $want_integration_tests])

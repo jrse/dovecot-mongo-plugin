@@ -15,8 +15,6 @@
 #include "hash.h"
 #include "dict.h"
 #include "imap-match.h"
-#include "doveadm-settings.h"
-#include "doveadm-mail.h"
 #include "macros.h"
 
 #include "doveadm-rbox-plugin.h"

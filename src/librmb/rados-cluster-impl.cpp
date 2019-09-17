@@ -15,7 +15,6 @@
 #include <string>
 #include <utility>
 
-#include "rados-dictionary-impl.h"
 #include "rados-storage-impl.h"
 
 using std::list;

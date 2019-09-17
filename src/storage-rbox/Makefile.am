@@ -22,25 +22,13 @@ libstorage_rbox_plugin_la_CPPFLAGS = \
 	$(LIBDOVECOT_STORAGE_INCLUDE) \
 	-I$(top_srcdir)/src/librmb 
 
-lib10_doveadm_rbox_plugin_la_CPPFLAGS= \
-	$(LIBDOVECOT_INCLUDE) \
-	$(LIBDOVECOT_STORAGE_INCLUDE) \
-	-I$(top_srcdir)/src/librmb \
-	-I$(top_srcdir)/src/librmb/tools/rmb 
 
 libstorage_rbox_plugin_la_DEPENDENCIES = $(LIBDOVECOT_DEPS)
 libstorage_rbox_plugin_la_LDFLAGS = -module -avoid-version
 libstorage_rbox_plugin_la_LIBADD = $(LIBDOVECOT) $(shlibs)
 
-lib10_doveadm_rbox_plugin_la_DEPENDENCIES = $(LIBDOVECOT_DEPS)
-lib10_doveadm_rbox_plugin_la_LDFLAGS = -module -avoid-version
-lib10_doveadm_rbox_plugin_la_LIBADD = $(LIBDOVECOT) $(shlibs) $(rmbtoollibs)
-
 module_dir = $(moduledir)
-doveadm_moduledir = $(moduledir)/doveadm
-
-doveadm_module_LTLIBRARIES = \
-	lib10_doveadm_rbox_plugin.la		
+doveadm_moduledir = $(moduledir)/doveadm		
 
 module_LTLIBRARIES = \
 	$(LIBSTORAGE_RBOX_PLUGIN)
@@ -73,11 +61,4 @@ libstorage_rbox_plugin_la_SOURCES = \
 	ostream-bufferlist.h \
 	rbox-mailbox-list-fs.h
 
-
-lib10_doveadm_rbox_plugin_la_SOURCES = \
-	doveadm-rbox.c  \
-	doveadm-rbox-plugin.cpp \
-	doveadm-rbox-plugin.h	 
-	 
-	
 	

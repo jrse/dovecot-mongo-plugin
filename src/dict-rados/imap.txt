@@ -1,7 +1,0 @@
-a login "t" "t"
-a GETMETADATA "INBOX" /private/comment
-a SETMETADATA INBOX (/private/comment "PRIVATE")
-a GETMETADATA "INBOX" /private/comment
-a GETMETADATA "INBOX" /shared/comment
-a SETMETADATA INBOX (/shared/comment "SHARED")
-a GETMETADATA "INBOX" /shared/comment

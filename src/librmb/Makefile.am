@@ -13,12 +13,10 @@ lib_LTLIBRARIES = \
 
 headers = \
 	rados-cluster.h \
-	rados-dictionary.h \
 	rados-storage.h \
 	encoding.h \
 	rados-cluster-impl.h \
 	rados-storage-impl.h \
-	rados-dictionary-impl.h \
 	rados-mail.h \
 	rados-util.h \
 	rados-metadata.h \
@@ -42,7 +40,6 @@ librmb_la_SOURCES = \
     $(headers) \
 	rados-cluster-impl.cpp \
 	rados-storage-impl.cpp \
-	rados-dictionary-impl.cpp \
 	rados-mail.cpp \
 	rados-util.cpp \
 	rados-dovecot-config.cpp \

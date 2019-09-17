@@ -6,9 +6,6 @@
 # License version 2.1, as published by the Free Software
 # Foundation.  See file COPYING.
 
-if BUILD_DICT_RADOS
-DICT_RADOS = dict-rados
-endif
 
 if BUILD_STORAGE_RBOX
 STORAGE_RBOX = storage-rbox
@@ -20,7 +17,6 @@ endif
 
 SUBDIRS = \
     librmb \
-	$(DICT_RADOS) \
     $(STORAGE_RBOX) \
 	$(PLUGIN_TESTS)
 

@@ -26,7 +26,6 @@ extern "C" {
 #include "istream.h"
 #include "mail-search-build.h"
 
-#include "libdict-rados-plugin.h"
 #include "mail-search-parser-private.h"
 #include "mail-search.h"
 }

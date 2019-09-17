@@ -14,7 +14,6 @@
 #include <list>
 #include "rados-types.h"
 #include "../../librmb/rados-cluster.h"
-#include "../../librmb/rados-dictionary.h"
 #include "../../librmb/rados-dovecot-config.h"
 #include "../../librmb/rados-storage.h"
 #include "../../librmb/rados-dovecot-ceph-cfg.h"
@@ -99,22 +98,6 @@ class RadosMetadataStorageProducerMock : public RadosMetadataStorage {
   MOCK_METHOD2(create_metadata_storage,
                RadosStorageMetadataModule *(librados::IoCtx *io_ctx_, librmb::RadosDovecotCephCfg *cfg_));
   MOCK_METHOD0(get_storage, RadosStorageMetadataModule *());
-};
-
-using librmb::RadosDictionary;
-
-class RadosDictionaryMock : public RadosDictionary {
- public:
-  MOCK_METHOD1(get_full_oid, const std::string(const std::string &key));
-  MOCK_METHOD0(get_shared_oid, const std::string());
-  MOCK_METHOD0(get_private_oid, const std::string());
-  MOCK_METHOD0(get_oid, const std::string &());
-  MOCK_METHOD0(get_username, const std::string &());
-  MOCK_METHOD0(get_io_ctx, librados::IoCtx &());
-  MOCK_METHOD1(remove_completion, void(librados::AioCompletion *c));
-  MOCK_METHOD1(push_back_completion, void(librados::AioCompletion *c));
-  MOCK_METHOD0(wait_for_completions, void());
-  MOCK_METHOD2(get, int(const std::string &key, std::string *value_r));
 };
 
 using librmb::RadosCluster;
